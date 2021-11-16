@@ -1,0 +1,179 @@
+/*****
+
+Colors
+Primary
+Bright orange: hsl(31, 77%, 52%) Dark cyan: hsl(184, 100%, 22%) Very dark cyan: hsl(179, 100%, 13%)
+
+Neutral
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75) Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
+
+Typography
+Body Copy
+Font size: 15px
+Font
+Family: Lexend Deca
+
+Weights: 400
+
+Family: Big Shoulders Display
+
+Weights: 700
+
+*****/
+
+:root {
+  /* COLORS */
+  /* primary */
+  --primary-borange: hsl(31, 77%, 52%);
+  --primary-dcyan: hsl(184, 100%, 22%);
+  --primary-vdcyan: hsl(179, 100%, 13%);
+
+  /* neutral */
+  --neutral-paragraph: hsla(0, 0%, 100%, 0.75);
+  --neutral-lgray: hsl(0, 0%, 95%);
+
+  /* TYPOGRAPHY */
+  --bodyFont: 15px;
+
+  /* FONTS */
+  --fontFamilyLexend: "Lexend Deca", sans-serif;
+  --fontFamilyBSD: "Big Shoulders Display", cursive;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img {
+  display: block;
+}
+
+body {
+  font-size: var(--bodyFont);
+  font-family: var(--fontFamilyBSD);
+}
+
+main {
+  border-radius: 10px;
+  margin: 3rem 1rem;
+}
+
+.cars {
+  padding: 2.5rem;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.cars h1 {
+  color: var(--neutral-paragraph);
+  text-transform: uppercase;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.cars p {
+  color: var(--neutral-lgray);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-family: var(--fontFamilyLexend);
+  line-height: 2;
+  padding-bottom: 2rem;
+}
+
+.sedan {
+  background-color: var(--primary-borange);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.suv {
+  background-color: var(--primary-dcyan);
+}
+
+.luxury {
+  background-color: var(--primary-vdcyan);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn {
+  display: block;
+  background-color: white;
+  padding: 1.25rem 3rem;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: transparent;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-sedan {
+  color: var(--primary-borange);
+}
+
+.btn-sedan:hover {
+  background-color: var(--primary-borange);
+  color: var(--neutral-paragraph);
+  border: 2px solid var(--neutral-paragraph);
+  display: block;
+}
+
+.btn-suv {
+  color: var(--primary-dcyan);
+}
+
+.btn-suv:hover {
+  background-color: var(--primary-dcyan);
+  color: var(--neutral-paragraph);
+  border: 2px solid var(--neutral-paragraph);
+  display: block;
+}
+
+.btn-luxury {
+  color: var(--primary-vdcyan);
+}
+
+.btn-luxury:hover {
+  background-color: var(--primary-vdcyan);
+  color: var(--neutral-paragraph);
+  border: 2px solid var(--neutral-paragraph);
+  display: block;
+}
+
+/**** BIG LAYOUT ****/
+@media screen and (min-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1100px;
+    margin: 2rem auto;
+  }
+
+  .sedan {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .luxury {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .btn {
+    margin-top: 3rem;
+  }
+}
